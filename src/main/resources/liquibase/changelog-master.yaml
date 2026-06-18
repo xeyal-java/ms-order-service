@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changelog/changes/01-create-orders-table.yaml
