@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20260527-01
+      author: Khayal-Gasimov
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: pickup_address
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delivery_address
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: NUMERIC(19, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: courier_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 20260529-02
+      author: Khayal-Gasimov
+      changes:
+        - addColumn:
+            tableName: orders
+            columns:
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
